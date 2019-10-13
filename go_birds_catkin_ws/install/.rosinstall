@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/raphael/go_birds_catkin_ws/install/setup.sh

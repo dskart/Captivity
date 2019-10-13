@@ -1,0 +1,2 @@
+go_birds
+-DCATKIN_DEVEL_PREFIX=/home/raphael/go_birds_catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/raphael/go_birds_catkin_ws/install -G Unix Makefiles
