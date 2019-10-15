@@ -1,8 +1,0 @@
-prefix=/home/raphael/Documents/go_birds/go_birds_catkin_ws/install
-
-Name: go_birds
-Description: Description of go_birds
-Version: 0.0.0
-Cflags: -I/home/raphael/Documents/go_birds/go_birds_catkin_ws/install/include
-Libs: -L/home/raphael/Documents/go_birds/go_birds_catkin_ws/install/lib 
-Requires: message_runtime
