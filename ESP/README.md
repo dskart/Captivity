@@ -28,4 +28,4 @@ There should be a .clang-format file in the top directory to help you.
 
 ## Implementing the Low Level
 
-Go the the [template README]() To see how you can write/add a node to this project
+Go the the [template README](https://github.com/dskart/Captivity/tree/master/ESP/template) To see how you can write/add a node to this project
