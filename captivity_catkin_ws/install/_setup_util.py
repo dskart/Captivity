@@ -270,7 +270,7 @@ if __name__ == '__main__':
 
         if not args.local:
             # environment at generation time
-            CMAKE_PREFIX_PATH = '/home/raphael/ros_catkin_ws/install_isolated'.split(';')
+            CMAKE_PREFIX_PATH = '/home/raphael/ros_serial_catking_ws/devel;/home/raphael/ros_catkin_ws/install_isolated'.split(';')
         else:
             # don't consider any other prefix path than this one
             CMAKE_PREFIX_PATH = []
