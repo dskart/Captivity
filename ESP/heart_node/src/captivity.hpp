@@ -2,6 +2,8 @@
 #define CAPTIVITY_HPP
 
 #include <Arduino.h>
+#include "heart.hpp"
+
 
 enum GameStates {
   IDLE = 0,
@@ -25,7 +27,9 @@ class Captivity {
   void End();
 
  private:
+  Heart heart_;
+
   void PrintPlayerState();
-;
+};
 
 #endif  // CAPTIVITY_HPP

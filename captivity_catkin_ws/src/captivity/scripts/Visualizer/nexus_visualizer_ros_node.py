@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
 import rospy
-from captivity.msg import GameState
+from captivity.msg import GameState as GameStateMsg
 from captivity.msg import Num
+from std_msgs.msg import UInt8
+
+# from Visualizer.current_game_state import CurrentGameStateCallback
 
 
-class NexusRosNode:
+class NexusVisualizerRosNode:
     def __init__(self):
-        self._hello_num = 0
-        self._InitPublisherTopics()
-        rospy.init_node('Nexus', anonymous=True)
+        # self._InitPublisherTopics()
+        rospy.init_node('nexus_visualizer', anonymous=True)
         self._rate = rospy.Rate(10)  # 10hzs
 
     def Loop(self):
@@ -19,5 +21,4 @@ class NexusRosNode:
             exit()
 
     def _InitPublisherTopics(self):
-        self.game_state_pub = rospy.Publisher(
-            'game_state', GameState, queue_size=10)
+        pass

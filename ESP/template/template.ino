@@ -6,7 +6,7 @@
 EspRosNode node;
 Captivity captivity_game;
 
-const uint16_t kSpinFrequency = 500;
+const uint16_t kSpinFrequency = 10;
 
 uint8_t Captivity::current_state = GameStates::IDLE;
 bool Captivity::player1_state = 0;
@@ -41,11 +41,6 @@ void loop() {
       Serial.println("ERROR: GAME STATE IS WRONG");
       break;
   }
-  // captivity::Num num_msg;
-  // num_msg.num = ++ii;
-
-  // ros::Publisher* pub = node.GetTopicPublisher(PublisherTopics::CHATTER1);
-  // pub->publish(&num_msg);
 
   node.SpinOnce(kSpinFrequency);
 }
