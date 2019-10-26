@@ -16,7 +16,7 @@ uint8_t Captivity::current_state = GameStates::IDLE;
 bool Captivity::player1_state = 0;
 bool Captivity::player2_state = 0;
 
-int Heart::current_life = 1000;
+int Heart::current_life = 9000;
 
 
 

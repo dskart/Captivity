@@ -3,12 +3,7 @@
 
 #include <Arduino.h>
 #include "heart.hpp"
-#include <Adafruit_NeoPixel.h>
 
-#define LED_PIN D1
- 
-// How many NeoPixels are attached to the Arduino?
-#define LED_COUNT 9
 
 enum GameStates {
   IDLE = 0,
@@ -19,11 +14,7 @@ enum GameStates {
 
 class Captivity {
  public:
-  Captivity():strip_(LED_COUNT, LED_PIN){
-    strip_.begin();
-    strip_.show();
-    strip_.setBrightness(255);
-  };
+  Captivity(){};
   ~Captivity(){};
 
   static uint8_t current_state;
@@ -36,7 +27,6 @@ class Captivity {
   void End();
 
  private:
-  Adafruit_NeoPixel strip_;
   Heart heart_;
 
   void PrintPlayerState();

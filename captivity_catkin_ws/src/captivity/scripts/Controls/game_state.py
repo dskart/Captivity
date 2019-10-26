@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 
 import rospy
-from captivity.msg import GameState
+from captivity.msg import GameState as GameStateMsg
 import tkinter as tk
 
 
-class GameStateIndicator:
+class GameState:
     def __init__(self, root, ros_node):
+        self._frame = tk.Frame(root)
+        self._frame.grid(row=0, column=1, padx=(10, 10), pady=(10, 10))
+
         self._ros_node = ros_node
         self._root = root
 
@@ -24,8 +27,7 @@ class GameStateIndicator:
 
         tk.Label(self._root,
                  text="""GAME STATE""",
-                 justify=tk.LEFT,
-                 padx=80).pack(anchor=tk.W)
+                 justify=tk.CENTER).pack(in_=self._frame, anchor=tk.N)
 
         for val, state in enumerate(self._game_states):
             tk.Radiobutton(self._root,
@@ -35,10 +37,10 @@ class GameStateIndicator:
                            padx=20,
                            variable=self._v,
                            command=self._PublishGameState,
-                           value=val).pack(anchor=tk.W)
+                           value=val).pack(in_=self._frame, anchor=tk.N)
 
     def _PublishGameState(self):
-        game_state_msg = GameState()
+        game_state_msg = GameStateMsg()
         game_state_msg.player1 = 0
         game_state_msg.player2 = 0
         game_state_msg.game_state = self._v.get()

@@ -13,7 +13,7 @@ void GameStateCB(const captivity::GameState& incoming_msg) {
 
 void UpdateLifeCB(const std_msgs::Int32& incoming_msg){
   if(Captivity::current_state == GameStates::START){
-    Heart::current_life -= incoming_msg.data;
+    Heart::current_life += incoming_msg.data;
 
     if (Heart::current_life <= 0){
       Heart::current_life = 0;

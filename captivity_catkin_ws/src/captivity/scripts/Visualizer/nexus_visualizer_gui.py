@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 import tkinter as tk
+import tkinter.ttk
 
-from game_state_indicator import GameStateIndicator
+from Visualizer.current_game_state import CurrentGameState
+from Visualizer.player_A import PlayerA
+from Visualizer.player_B import PlayerB
 
 
-class NexusGui:
+class NexusVisualizerGui:
     def __init__(self, ros_node):
         self._ros_node = ros_node
 
@@ -12,10 +15,12 @@ class NexusGui:
         self._root = tk.Tk()
         self._root.attributes('-type', 'dialog')
 
-        self._root.geometry("800x600")
         self._app = MainWindow(self._root)
-        self._game_state_indicator = GameStateIndicator(
-            self._app, self._ros_node)
+
+        self._player_A = PlayerA(self._app, self._ros_node)
+        self._player_B = PlayerB(self._app, self._ros_node)
+
+        self._current_game_state = CurrentGameState(self._app, self._ros_node)
 
     def Start(self):
         self._root.after(1, self._LoopRosNode)
@@ -34,5 +39,5 @@ class MainWindow(tk.Frame):
         self._InitWindow()
 
     def _InitWindow(self):
-        self.master.title("NEXUS FOR CAPTIVITY")
+        self.master.title("NEXUS VISUALIZER")
         self.pack(fill=tk.BOTH, expand=1)
