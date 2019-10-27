@@ -40,6 +40,7 @@ void EspRosNode::AdvertiseTopics() {
 
 void EspRosNode::SubscribeToTopics() {
   ros_node_handle_.subscribe(topics_.game_state_sub);
+  ros_node_handle_.subscribe(topics_.front_door_actor_state_sub);
 
   return;
 }

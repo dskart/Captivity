@@ -9,3 +9,9 @@ void GameStateCB(const captivity::GameState& incoming_msg) {
 
   return;
 }
+
+void MusicBoxStateCB(const std_msgs::UInt8& incoming_msg){
+  Captivity::play_music = incoming_msg.data;
+
+  return;
+}

@@ -12,7 +12,7 @@ from Controls.door_actor_abstract import DoorActorAbstract
 class BackDoorActorB(DoorActorAbstract):
 
     def _InitFrame(self):
-        self._frame.grid(row=1, column=2, padx=(10, 10), pady=(10, 10))
+        self._frame.grid(row=1, column=1, padx=(10, 10), pady=(10, 10))
 
     def _InitLabel(self):
         tk.Label(self._root,

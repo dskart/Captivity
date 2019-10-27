@@ -24,13 +24,12 @@ class NexusControlsGui:
         self._front_door_actor_A = FrontDoorActorA(self._app, self._ros_node)
         self._front_door_actor_B = FrontDoorActorB(self._app, self._ros_node)
 
-        self._game_state = GameState(self._app, self._ros_node)
-
         self._back_door_actor_A = BackDoorActorA(self._app, self._ros_node)
         self._back_door_actor_B = BackDoorActorB(self._app, self._ros_node)
 
         self._music_box_A = MusicBoxA(self._app, self._ros_node)
         self._music_box_B = MusicBoxB(self._app, self._ros_node)
+        self._game_state = GameState(self._app, self._ros_node)
 
     def Start(self):
         self._root.after(1, self._LoopRosNode)

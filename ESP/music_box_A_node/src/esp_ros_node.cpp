@@ -35,11 +35,13 @@ void EspRosNode::SetupWifi() {
 }
 
 void EspRosNode::AdvertiseTopics() {
+  ros_node_handle_.advertise(topics_.monster_out_pub);
   return;
 }
 
 void EspRosNode::SubscribeToTopics() {
   ros_node_handle_.subscribe(topics_.game_state_sub);
+  ros_node_handle_.subscribe(topics_.music_state_sub);
 
   return;
 }

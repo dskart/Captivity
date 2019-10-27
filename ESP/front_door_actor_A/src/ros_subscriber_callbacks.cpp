@@ -9,3 +9,8 @@ void GameStateCB(const captivity::GameState& incoming_msg) {
 
   return;
 }
+
+void FrontDoorActorCB(const std_msgs::UInt8& incoming_msg){
+  Captivity::front_door_actor_state = incoming_msg.data;
+  return;
+}
