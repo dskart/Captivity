@@ -38,3 +38,6 @@ class NexusControlsRosNode:
 
         self.music_box_B_state_pub = rospy.Publisher(
             'music_box_B_state', UInt8, queue_size=10)
+
+        self.life_switch_state_pub = rospy.Publisher(
+            'life_switch_state', UInt8, queue_size=10)

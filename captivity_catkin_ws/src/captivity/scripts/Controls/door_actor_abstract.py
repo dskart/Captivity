@@ -13,6 +13,7 @@ class DoorActorAbstract:
         self._InitFrame()
         self._ros_node = ros_node
         self._root = root
+        self._InitSubscribers()
 
         self._InitWidgets()
 
@@ -48,3 +49,10 @@ class DoorActorAbstract:
     @abstractmethod
     def _PublishActorState(self):
         pass
+
+    @abstractmethod
+    def _InitSubscribers(self):
+        pass
+
+    def _ActorStateCallBack(self, msg_in):
+        self._v.set(msg_in.data)

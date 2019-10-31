@@ -35,7 +35,8 @@ void EspRosNode::SetupWifi() {
 }
 
 void EspRosNode::AdvertiseTopics() {
-  ros_node_handle_.advertise(topics_.current_life_pub);
+  ros_node_handle_.advertise(topics_.player_A_current_life_pub);
+  ros_node_handle_.advertise(topics_.player_B_current_life_pub);
 
   return;
 }
@@ -43,6 +44,7 @@ void EspRosNode::AdvertiseTopics() {
 void EspRosNode::SubscribeToTopics() {
   ros_node_handle_.subscribe(topics_.game_state_sub);
   ros_node_handle_.subscribe(topics_.update_life_sub);
+  ros_node_handle_.subscribe(topics_.life_switch_state_sub);
 
   return;
 }

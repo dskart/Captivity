@@ -25,3 +25,7 @@ class BackDoorActorA(DoorActorAbstract):
 
         rospy.loginfo(actor_msg)
         self._ros_node.back_door_actor_A_state_pub.publish(actor_msg)
+
+    def _InitSubscribers(self):
+        rospy.Subscriber("back_actor_A_state", std_msgs.msg.UInt8,
+                         self._ActorStateCallBack)

@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include "heart.hpp"
 
-
 enum GameStates {
   IDLE = 0,
   RESET = 1,
