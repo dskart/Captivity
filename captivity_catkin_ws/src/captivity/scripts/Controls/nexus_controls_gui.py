@@ -8,6 +8,7 @@ from Controls.back_door_actor_A import BackDoorActorA
 from Controls.back_door_actor_B import BackDoorActorB
 from Controls.music_box_A import MusicBoxA
 from Controls.music_box_B import MusicBoxB
+from Controls.life_switch import LifeSwitch
 
 
 class NexusControlsGui:
@@ -29,7 +30,9 @@ class NexusControlsGui:
 
         self._music_box_A = MusicBoxA(self._app, self._ros_node)
         self._music_box_B = MusicBoxB(self._app, self._ros_node)
+
         self._game_state = GameState(self._app, self._ros_node)
+        self._life_switch = LifeSwitch(self._app, self._ros_node)
 
     def Start(self):
         self._root.after(1, self._LoopRosNode)

@@ -12,6 +12,7 @@ class MusicBoxA:
 
         self._ros_node = ros_node
         self._root = root
+        self._InitSubscribers()
 
         self._InitWidgets()
 
@@ -44,3 +45,10 @@ class MusicBoxA:
 
         rospy.loginfo(music_box_msg)
         self._ros_node.music_box_A_state_pub.publish(music_box_msg)
+
+    def _InitSubscribers(self):
+        rospy.Subscriber("music_box_A_state", std_msgs.msg.UInt8,
+                         self._MusicBoxStateCallBack)
+
+    def _MusicBoxStateCallBack(self, msg_in):
+        self._v.set(msg_in.data)

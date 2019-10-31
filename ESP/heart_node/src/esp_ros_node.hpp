@@ -19,7 +19,8 @@ struct RosLogInfo {
 class EspRosNode {
  public:
   // EspRosNode() : server_ip_(IPAddress(10, 9, 9, 137)){};
-  EspRosNode() : server_ip_(IPAddress(192, 168, 0, 121)){};
+  // EspRosNode() : server_ip_(IPAddress(192, 168, 0, 121)){};
+  EspRosNode() : server_ip_(IPAddress(192, 168, 0, 137)){};
   ~EspRosNode(){};
 
   void Init();

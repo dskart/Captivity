@@ -13,18 +13,18 @@ Captivity captivity_game;
 const uint16_t kSpinFrequency = 10;
 
 uint8_t Captivity::current_state = GameStates::IDLE;
-bool Captivity::player1_state = 0;
-bool Captivity::player2_state = 0;
+bool Captivity::player1_state = 1;
+bool Captivity::player2_state = 1;
 
-int Heart::current_life = 9000;
+int32_t Heart::player_A_life = 9000;
+int32_t Heart::player_B_life = 9000;
+bool Heart::life_switch = LifeSwitch::A;
+bool Heart::using_power = 0;
 
-
-
-void setup(){
+void setup() {
   Serial.begin(115200);
   node.Init();
 }
-
 
 void loop() {
   delay(100);
@@ -50,10 +50,21 @@ void loop() {
       break;
   }
 
-  ros::Publisher* current_life_pub = node.GetTopicPublisher(PublisherTopics::CURRENT_LIFE);
-  std_msgs::Int32 current_life_msg;
-  current_life_msg.data = Heart::current_life;
-  current_life_pub->publish(&current_life_msg);
+  PublishPlayersLife();
 
   node.SpinOnce(kSpinFrequency);
+}
+
+void PublishPlayersLife() {
+  ros::Publisher* player_A_current_life_pub = node.GetTopicPublisher(PublisherTopics::PLAYER_A_CURRENT_LIFE);
+  std_msgs::Int32 player_A_current_life_msg;
+  player_A_current_life_msg.data = Heart::player_A_life;
+  player_A_current_life_pub->publish(&player_A_current_life_msg);
+
+  ros::Publisher* player_B_current_life_pub = node.GetTopicPublisher(PublisherTopics::PLAYER_B_CURRENT_LIFE);
+  std_msgs::Int32 player_B_current_life_msg;
+  player_B_current_life_msg.data = Heart::player_B_life;
+  player_B_current_life_pub->publish(&player_B_current_life_msg);
+
+  return;
 }

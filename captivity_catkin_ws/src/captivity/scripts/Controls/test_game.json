@@ -1,0 +1,40 @@
+{
+  "max_time": 900,
+  "events_data": [
+    { 
+      "front_door_actor_a": 999,
+      "front_door_actor_b": 1,
+      "back_door_actor_a": 0,
+      "back_door_actor_b": 0,
+      "music_box": 0
+    },
+    { 
+      "front_door_actor_a": 0,
+      "front_door_actor_b": 0,
+      "back_door_actor_a": 1,
+      "back_door_actor_b": 1,
+      "music_box": 1
+    },
+    {
+      "front_door_actor_a": 1,
+      "front_door_actor_b": 2,
+      "back_door_actor_a": 3,
+      "back_door_actor_b": 4,
+      "music_box": 1
+    },
+    {
+      "front_door_actor_a": 1,
+      "front_door_actor_b": 2,
+      "back_door_actor_a": 3,
+      "back_door_actor_b": 4,
+      "music_box": 1
+    },
+    {
+      "front_door_actor_a": 1,
+      "front_door_actor_b": 2,
+      "back_door_actor_a": 3,
+      "back_door_actor_b": 4,
+      "music_box": 1
+    }
+  ]
+}
