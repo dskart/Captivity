@@ -53,11 +53,10 @@ void Captivity::Start() {
       }
 
       //clicked the restart switch, ready to pub
-      if(digitalRead(RESTART_PIN)){
+      if (digitalRead(RESTART_PIN_A) || digitalRead(RESTART_PIN_B)) {
         Serial.println("RESTART MUSIC");
         Captivity::restart_music = 1;
       }
-      
     }
   }
 

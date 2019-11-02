@@ -35,6 +35,7 @@ void EspRosNode::SetupWifi() {
 }
 
 void EspRosNode::AdvertiseTopics() {
+  ros_node_handle_.advertise(topics_.life_switch_state_pub);
   return;
 }
 

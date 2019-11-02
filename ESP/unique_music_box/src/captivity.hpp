@@ -5,7 +5,8 @@
 #include "SerialMP3Player.h"
 
 
-#define RESTART_PIN 23 
+#define RESTART_PIN_B 22 
+#define RESTART_PIN_A 23 
 
 enum GameStates {
   IDLE = 0,

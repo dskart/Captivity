@@ -25,6 +25,9 @@ void Captivity::Start() {
   else if (Captivity::front_door_actor_state == 2){
     DisplayLEDs(0,0,1); 
   }
+  else if (Captivity::front_door_actor_state == 3){
+    DisplayLEDs(0,1,1);
+  }
   return;
 }
 

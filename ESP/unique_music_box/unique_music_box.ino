@@ -7,7 +7,7 @@
 EspRosNode node;
 Captivity captivity_game;
 
-const uint16_t kSpinFrequency = 10;
+const uint16_t kSpinFrequency = 50;
 
 uint8_t Captivity::current_state = GameStates::IDLE;
 bool Captivity::playerB_state = 0;
@@ -17,7 +17,8 @@ bool Captivity::monster_out = 0;
 bool Captivity::restart_music = 0;
 
 void setup() {
- pinMode(RESTART_PIN, INPUT);
+ pinMode(RESTART_PIN_A, INPUT);
+ pinMode(RESTART_PIN_B, INPUT);
 
  Serial.begin(115200);
  node.Init();

@@ -13,6 +13,7 @@ class LifeSwitch:
         self._ros_node = ros_node
         self._root = root
 
+        self._InitSubscribers()
         self._InitWidgets()
 
     def _InitWidgets(self):

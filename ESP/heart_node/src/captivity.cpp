@@ -46,6 +46,20 @@ void Captivity::Reset() {
 void Captivity::Start() {
   heart_.player_A_state = Captivity::player1_state;
   heart_.player_B_state = Captivity::player2_state;
+  // Serial.print("player A:");
+  // Serial.println(heart_.player_A_state);
+  // Serial.print("player B:");
+  // Serial.println(heart_.player_B_state);
+
+  if (!heart_.player_A_state) {
+    heart_.FillAllHeart_A(0,0,0);
+    Heart::player_A_life = 0;
+  }
+
+  if (!heart_.player_B_state) {
+    heart_.FillAllHeart_B(0,0,0);
+    Heart::player_B_life = 0;
+  }
 
   if (!heart_.TimerActive()) {
     heart_.StartTimer();

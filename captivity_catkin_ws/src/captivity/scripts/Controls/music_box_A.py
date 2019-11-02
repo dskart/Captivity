@@ -8,7 +8,9 @@ import tkinter as tk
 class MusicBoxA:
     def __init__(self, root, ros_node):
         self._frame = tk.Frame(root)
-        self._frame.grid(row=2, column=0, padx=(10, 10), pady=(10, 10))
+        # self._frame.grid(row=2, column=0, padx=(10, 10), pady=(10, 10))
+        self._frame.grid(columnspan=2, column=0,
+                         padx=(10, 10), pady=(10, 10))
 
         self._ros_node = ros_node
         self._root = root
@@ -44,10 +46,10 @@ class MusicBoxA:
         music_box_msg.data = self._v.get()
 
         rospy.loginfo(music_box_msg)
-        self._ros_node.music_box_A_state_pub.publish(music_box_msg)
+        self._ros_node.music_box_state_pub.publish(music_box_msg)
 
     def _InitSubscribers(self):
-        rospy.Subscriber("music_box_A_state", std_msgs.msg.UInt8,
+        rospy.Subscriber("music_box_state", std_msgs.msg.UInt8,
                          self._MusicBoxStateCallBack)
 
     def _MusicBoxStateCallBack(self, msg_in):

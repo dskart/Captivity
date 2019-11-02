@@ -18,9 +18,9 @@ enum PublisherTopics {
 class RosTopics {
  public:
   RosTopics() : game_state_sub("game_state", &GameStateCB),
-                music_state_sub("music_box_A_state", &MusicBoxStateCB),
+                music_state_sub("music_box_state", &MusicBoxStateCB),
                 monster_out_pub("monster_A_out", &monster_out_msg_),
-                music_state_pub("music_box_A_state", &music_state_msg) {}
+                music_state_pub("music_box_state", &music_state_msg) {}
 
   ros::Subscriber<captivity::GameState> game_state_sub;
   ros::Subscriber<std_msgs::UInt8> music_state_sub;

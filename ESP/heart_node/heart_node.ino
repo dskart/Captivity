@@ -10,7 +10,7 @@
 EspRosNode node;
 Captivity captivity_game;
 
-const uint16_t kSpinFrequency = 10;
+const uint16_t kSpinFrequency = 50;
 
 uint8_t Captivity::current_state = GameStates::IDLE;
 bool Captivity::player1_state = 1;

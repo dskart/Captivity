@@ -65,8 +65,8 @@ class GameState:
             new_label = "GAME STATE: " + time_left_str
             self._game_state_label.configure(text=new_label)
 
-            if self._TimePassedSinceLastEvent():
-                self._UpdateEvent()
+            # if self._TimePassedSinceLastEvent():
+            # self._UpdateEvent()
 
             if time_left <= 0:
                 self.radio_buttons["END"].invoke()
@@ -108,7 +108,7 @@ class GameState:
         self._ros_node.game_state_pub.publish(game_state_msg)
 
         #  STATE = RESET
-        if self._v.get() == 1:
+        if self._v.get() != 2:
             self._ResetEveryPubValues()
 
         # first start set up timer
@@ -127,8 +127,7 @@ class GameState:
         music_box_msg = std_msgs.msg.UInt8()
         music_box_msg.data = 1
 
-        self._ros_node.music_box_A_state_pub.publish(music_box_msg)
-        self._ros_node.music_box_B_state_pub.publish(music_box_msg)
+        self._ros_node.music_box_state_pub.publish(music_box_msg)
 
     def _ResetActors(self):
         actor_msg = std_msgs.msg.UInt8()

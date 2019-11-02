@@ -6,6 +6,8 @@ from Visualizer.current_game_state import CurrentGameState
 from Visualizer.player_A import PlayerA
 from Visualizer.player_B import PlayerB
 
+from Visualizer.music_box import MusicBox
+
 
 class NexusVisualizerGui:
     def __init__(self, ros_node):
@@ -20,6 +22,7 @@ class NexusVisualizerGui:
         self._player_A = PlayerA(self._app, self._ros_node)
         self._player_B = PlayerB(self._app, self._ros_node)
 
+        self._music_box = MusicBox(self._app, self._ros_node)
         self._current_game_state = CurrentGameState(self._app, self._ros_node)
 
     def Start(self):

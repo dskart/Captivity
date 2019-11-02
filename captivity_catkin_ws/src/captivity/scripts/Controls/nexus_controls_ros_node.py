@@ -33,11 +33,11 @@ class NexusControlsRosNode:
         self.back_door_actor_B_state_pub = rospy.Publisher(
             'back_actor_B_state', UInt8, queue_size=10)
 
-        self.music_box_A_state_pub = rospy.Publisher(
-            'music_box_A_state', UInt8, queue_size=10)
+        self.music_box_state_pub = rospy.Publisher(
+            'music_box_state', UInt8, queue_size=10)
 
-        self.music_box_B_state_pub = rospy.Publisher(
-            'music_box_B_state', UInt8, queue_size=10)
+        # self.music_box_B_state_pub = rospy.Publisher(
+        # 'music_box_B_state', UInt8, queue_size=10)
 
         self.life_switch_state_pub = rospy.Publisher(
             'life_switch_state', UInt8, queue_size=10)
