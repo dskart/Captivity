@@ -14,7 +14,7 @@ enum PublisherTopics {
 class RosTopics {
  public:
   RosTopics() : game_state_sub("game_state", &GameStateCB),
-                front_door_actor_state_sub("back_actor_B_state", &FrontDoorActorCB){}
+                front_door_actor_state_sub("back_actor_A_state", &FrontDoorActorCB){}
 
 
   ros::Subscriber<captivity::GameState> game_state_sub;

@@ -5,11 +5,11 @@
 #include <Arduino.h>
 #include <Ticker.h>
 
-#define LOCK_PIN D1
-#define UNLOCK_PIN D2
+#define LOCK_PIN D2
+#define UNLOCK_PIN D1
 #define LED_PIN D5
 
-#define LED_COUNT 7
+#define LED_COUNT 12
 
 #define LIFE_UPDATE_TIME 1
 

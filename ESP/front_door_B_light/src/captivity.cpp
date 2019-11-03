@@ -33,6 +33,7 @@ void Captivity::Start() {
     if (digitalRead(SWITCH_PIN)) {
 
       if (!TimerActive()) {
+        Captivity::update_life = 1;
         StartTimer();
       }
       FillLedStrip(0, 0, 255);

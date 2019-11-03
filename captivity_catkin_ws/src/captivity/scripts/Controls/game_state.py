@@ -12,7 +12,8 @@ import os
 
 class GameState:
     # MAX_TIME = 60*15
-    MAX_TIME = 5
+    # MAX_TIME = 30000
+    MAX_TIME = 900
     _EVENT_TIME = 60
 
     def __init__(self, root, ros_node):
@@ -144,6 +145,6 @@ class GameState:
         with open(dir_path) as f:
             data = json.load(f)
 
-        self.MAX_TIME = data["max_time"]
+        # self.MAX_TIME = data["max_time"]
 
         return data['events_data']

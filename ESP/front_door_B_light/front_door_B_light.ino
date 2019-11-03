@@ -3,7 +3,7 @@
 #include "src/captivity.hpp"
 #include "src/esp_ros_node.hpp"
 
-#define LIFE_DECREASE 55 
+#define LIFE_DECREASE 12 
 
 EspRosNode node;
 Captivity captivity_game;

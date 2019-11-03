@@ -41,7 +41,7 @@ class Heart {
   static bool using_power;
 
   uint32_t power_use_start_time = 0;
-  uint32_t power_use_display_max_time = 2000;
+  uint32_t power_use_display_max_time = 1000;
 
   bool player_A_state = 1;
   bool player_B_state = 1;

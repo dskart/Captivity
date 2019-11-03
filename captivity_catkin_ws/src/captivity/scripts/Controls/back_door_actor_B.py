@@ -35,11 +35,11 @@ class BackDoorActorB(DoorActorAbstract):
         rospy.Subscriber("iris_B_state", std_msgs.msg.UInt8,
                          self._DoorEventCallBack)
 
-    def _PlayerLost(self):
-        game_state_msg = GameStateMsg()
-        game_state_msg.player1 = 0
-        game_state_msg.player2 = 1
-        game_state_msg.game_state = 2
+    # def _PlayerLost(self):
+    #     game_state_msg = GameStateMsg()
+    #     game_state_msg.player1 = 0
+    #     game_state_msg.player2 = 1
+    #     game_state_msg.game_state = 2
 
-        rospy.loginfo(game_state_msg)
-        self._ros_node.game_state_pub.publish(game_state_msg)
+    #     rospy.loginfo(game_state_msg)
+    #     self._ros_node.game_state_pub.publish(game_state_msg)

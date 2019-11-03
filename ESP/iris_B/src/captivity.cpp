@@ -32,7 +32,7 @@ void Captivity::Start() {
 
   if(Captivity::player2_state){
     if (iris_switch_state) {  // A
-      if (digitalRead(LOCK_PIN)) {
+      if (!digitalRead(LOCK_PIN)) {
         if (!TimerActive()) {
           StartTimer();
         }
@@ -40,7 +40,7 @@ void Captivity::Start() {
         iris_switch_state = 0;
       }
     } else {
-      if (digitalRead(UNLOCK_PIN)) {
+      if (!digitalRead(UNLOCK_PIN)) {
         StopTimer();
         FillLedStrip(0,255,0);
         iris_switch_state = 1;

@@ -27,9 +27,9 @@ bool Captivity::player2_state = 0;
 bool lock_has_changed = 0;
 bool lock_is_open = 0; // 1 for open, 0 for closed
 bool old_lock_value = 0;
-const int drive_speed = 500;
-double pub_freq_float = .5;
-int penalty = -111;
+const int drive_speed = 700;
+double pub_freq_float = 1;
+int penalty = -11;
 int time_closed = 0;
 
 
