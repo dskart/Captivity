@@ -21,9 +21,9 @@ void Captivity::Reset() {
 
 // This is pretty ugly, but like had 2hours to make it work so give me a break
 void Captivity::Start() {
-  if (monster_out){
-    return;
-  }
+  // if (monster_out){
+    // return;
+  // }
 
   if (music_playing_){
     // turn of the music
@@ -43,19 +43,22 @@ void Captivity::Start() {
       mp3_.play();
       music_playing_ = 1;
       music_start_time_ = millis();
+      Captivity::monster_out = 0;
       delay(100);
     }
     else{
       
-      // music out for too long
-      if ((millis() - music_interrupt_start_time_) > interrupt_max_duration_) {
-        Captivity::monster_out = 1;
-      }
+      if (!monster_out){
+        // music out for too long
+        if ((millis() - music_interrupt_start_time_) > interrupt_max_duration_) {
+          Captivity::monster_out = 1;
+        }
 
-      //clicked the restart switch, ready to pub
-      if (digitalRead(RESTART_PIN_A) || digitalRead(RESTART_PIN_B)) {
-        Serial.println("RESTART MUSIC");
-        Captivity::restart_music = 1;
+        //clicked the restart switch, ready to pub
+        if (digitalRead(RESTART_PIN_A) || digitalRead(RESTART_PIN_B)) {
+          Serial.println("RESTART MUSIC");
+          Captivity::restart_music = 1;
+        }
       }
     }
   }
