@@ -3,7 +3,7 @@ Captivity is a project to create an interactive room/gaming environment. The ide
   
 This meant that all this modules had to be controlled/sensed and then processed by a microntroller (esp8266/ esp32). All the data was then gathered by a main server that controlled the game logic for the entirety of the game. We had around 20 esp "nodes" all talking together over wifi by running ROS with its pub/sub pattern. The main server was also running a GUI that enabled the "game master" to see everything happening in the rooms as well as control any actuator remotly. The server was also made in a way that it is easy to implement a .json file with instruction to automated the whole game. 
   
-If you look at the code, please remind yourself that all the code was done in the span of 3 w.e with no sleep literally in a dark basement. So there are so shortcuts I had to take that made sense on the moment. It was still reliable enought to run the game over 2 w.e with around 200 people playing it and nothing breaking.
+If you look at the code, please remind yourself that all the code was done in the span of 3 w.e with no sleep literally in a dark basement. So there are some shortcuts I had to take that made sense on the moment. It was still reliable enought to run the game over 2 w.e with around 200 people playing it and nothing breaking.
 
 ## Getting Started
 
@@ -15,6 +15,7 @@ These instructions will show you how to get the game running on your esp/compute
 - ROS serial
 - Esp32 /8266
 - TkInter
+- Arduino IDE
 
 ## Repository format
 
@@ -42,40 +43,6 @@ This directory contains all the ESP code. The only special directories that are 
 the names of these directories are pretty explanitory by themselves and the ESP folder has its own [README](https://github.com/dskart/Captivity/blob/master/ESP/README.md). Look there for any information you want.
 
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 * **Raphael Van Hoffelen** - *Initial work*  - [github](https://github.com/dskart), [website](www.raphaelvanhoffelen.com)
@@ -86,7 +53,5 @@ TODO
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+All my partners that trusted me to make all the software for this crazy project.
 
