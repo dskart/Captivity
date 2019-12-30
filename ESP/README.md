@@ -1,5 +1,6 @@
 # ESP NODES 
 This is where all the code for the Esp nodes is. They are all build on top of the template that lives in ./template.
+There is a [README](https://github.com/dskart/Captivity/blob/master/ESP/template/README.md) in there that explains how the template works.
 
 ## Getting Started
 
