@@ -3,7 +3,7 @@ Captivity is a project to create an interactive room/gaming environment. The ide
  
 This meant that all these modules had to be controlled/sensed and then processed by a microcontroller (esp8266/ esp32). All the data was then gathered by a main server that controlled the game logic for the entirety of the game. We had around 20 esp "nodes" all talking together over wifi by running ROS with its pub/sub pattern. The main server was also running a GUI that enabled the "game master" to see everything happening in the rooms as well as control any actuator remotely. The server was also made in a way that it is easy to implement a .json file with instructions to automated the whole game.
  
-If you look at the code, please remind yourself that all the code was done in the span of 3 w.e with no sleep literally in a dark basement. So there are some shortcuts I had to take that made sense in the moment. It was still reliable enough to run the game over 2 w.e with around 200 people playing it and nothing breaking.
+If you look at the code, please remind yourself that all the code was done in the span of 3 w.e with no sleep literally in a dark basement. So there are some shortcuts I had to take that made sense in the moment. It was still reliable enough to run the game over 2 w.e with around 100 people playing it and nothing breaking.
 
 
 ## Prerequisites
