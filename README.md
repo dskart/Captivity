@@ -42,7 +42,7 @@ the names of these directories are pretty explanatory by themselves and the ESP 
 
 ## Authors
 
-* **Raphael Van Hoffelen** - *Initial work*  - [github](https://github.com/dskart), [website](www.raphaelvanhoffelen.com)
+* **Raphael Van Hoffelen** - *Initial work*  - [github](https://github.com/dskart), [website](https://www.raphaelvanhoffelen.com/)
 
 ## License
 
